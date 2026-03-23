@@ -1,197 +1,140 @@
-<div style="background-color: #f5f5dc; padding: 15px; border: 1px solid #d2b48c; border-radius: 5px; font-family: monospace; white-space: pre-wrap; color: #333;">
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>paramoby.ch – Mobilität für die Schweiz</title>
-<style>
-:root {
---bg-color: #ffffff;
---text-color: #000000;
---accent-color: #ffd700;
---sub-color: #666666;
---font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paramoby.ch – Paramobilität für die Schweiz</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #ffd700;
+            --sub-color: #666666;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
 
-    body {
-        font-family: var(--font-main);
-        margin: 0;
-        padding: 0;
-        color: var(--text-color);
-        background-color: var(--bg-color);
-        line-height: 1.6;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
+        body {
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-    header {
-        margin-bottom: 40px;
-    }
+        header { margin-bottom: 40px; }
+        .logo { max-width: 150px; height: auto; margin-bottom: 10px; }
+        h1 { font-size: 2.5rem; margin: 0; font-weight: 700; border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 5px; }
+        .motto { font-size: 1.2rem; color: var(--sub-color); margin-top: 5px; font-weight: 300; }
 
-    .logo {
-        max-width: 150px;
-        height: auto;
-        margin-bottom: 10px;
-    }
+        .points { display: flex; flex-direction: column; gap: 15px; align-items: center; width: 100%; }
+        .point { background-color: #f9f9f9; padding: 15px 25px; border-radius: 8px; border-left: 5px solid var(--text-color); width: 100%; max-width: 500px; text-align: left; }
+        .point-title { font-weight: 700; color: var(--text-color); }
 
-    h1 {
-        font-size: 2.5rem;
-        margin: 0;
-        font-weight: 700;
-        border-bottom: 3px solid var(--accent-color);
-        display: inline-block;
-        padding-bottom: 5px;
-    }
+        footer {
+            background-color: #ffffff;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: auto;
+            font-size: 0.8rem;
+            border-top: 1px solid #eee;
+        }
 
-    .motto {
-        font-size: 1.2rem;
-        color: var(--sub-color);
-        margin-top: 5px;
-        font-weight: 300;
-    }
+        .impressum-link {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 1px dotted #ccc;
+        }
 
-    main {
-        margin-bottom: 60px;
-        width: 100%;
-    }
+        #impressum-content {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            color: #444;
+            text-align: left;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-    .points {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .point {
-        background-color: #f9f9f9;
-        padding: 15px 25px;
-        border-radius: 8px;
-        border-left: 5px solid var(--text-color);
-        width: 100%;
-        max-width: 500px;
-        text-align: left;
-        transition: transform 0.2s ease;
-    }
-
-    .point:hover {
-        transform: translateX(5px);
-    }
-
-    .point-title {
-        font-weight: 700;
-        color: var(--text-color);
-    }
-
-    footer {
-        background-color: #000000;
-        color: #ffffff;
-        padding: 40px 20px;
-        text-align: center;
-        margin-top: auto;
-    }
-
-    .footer-content {
-        max-width: 800px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        text-align: left;
-    }
-
-    .footer-section h4 {
-        border-bottom: 1px solid #444;
-        padding-bottom: 5px;
-        margin-bottom: 10px;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-    }
-
-    .footer-section p, .footer-section a {
-        font-size: 0.85rem;
-        color: #ccc;
-        text-decoration: none;
-        margin: 5px 0;
-        display: block;
-    }
-
-    .copyright {
-        font-size: 0.75rem;
-        margin-top: 30px;
-        color: rgba(255,255,255,0.4);
-        grid-column: span 2;
-        text-align: center;
-    }
-
-    @media (max-width: 600px) {
-        h1 { font-size: 2rem; }
-        .container { padding: 15px; }
-        .point { max-width: 100%; }
-        .footer-content { grid-template-columns: 1fr; }
-    }
-</style>
+        @media (max-width: 600px) { h1 { font-size: 2rem; } }
+    </style>
 </head>
 <body>
 
 <div class="container">
-<header>
-<img src="logo.png" alt="paramoby.ch Logo" class="logo">
-<h1>paramoby.ch</h1>
-<p class="motto">Mobilität ohne Grenzen</p>
-</header>
+    <header>
+        <img src="logo.png" alt="paramoby.ch Logo" class="logo">
+        <h1>paramoby.ch</h1>
+        <p class="motto">Paramobilität ohne Grenzen</p>
+    </header>
 
-<main>
-    <div class="points">
-        <div class="point">
-            <div class="point-title">B2B Vertrieb</div>
-            <div class="point-text">Spezialisierter Business-to-Business Verkauf von Mobilitätslösungen für Unternehmen und Fachhandel.</div>
+    <main style="width: 100%;">
+        <div class="points">
+            <div class="point">
+                <div class="point-title">B2B Paramobilität</div>
+                <div class="point-text">Spezialisierter Vertrieb von Hilfsmitteln für Menschen mit Behinderungen an den Fachhandel.</div>
+            </div>
+            <div class="point">
+                <div class="point-title">Import & Service</div>
+                <div class="point-text">Hochwertige Rollstuhlsysteme und technischer Support in der gesamten Schweiz.</div>
+            </div>
         </div>
-        <div class="point">
-            <div class="point-title">Import & Vertrieb</div>
-            <div class="point-text">Spezialisierte Rollstuhlsysteme für den Schweizer Markt.</div>
-        </div>
-        <div class="point">
-            <div class="point-title">Qualität & Service</div>
-            <div class="point-text">Zuverlässige Unterstützung für individuelle Mobilitätsprojekte.</div>
-        </div>
-    </div>
-</main>
+    </main>
 </div>
 
 <footer>
-<div class="footer-content">
-<div class="footer-section">
-<h4>Kontakt</h4>
-<p>paramoby.ch</p>
-<a href="mailto:info@paramoby.ch">info@paramoby.ch</a>
-<p>Schweiz</p>
-</div>
-<div class="footer-section">
-<h4>Impressum</h4>
-<p><strong>Firmenname:</strong> paramoby.ch</p>
-<p><strong>Vertretung:</strong> [Vorname Nachname]</p>
-<p><strong>Adresse:</strong> [Strasse Nr., PLZ Ort]</p>
-<p><strong>UID:</strong> [CHE-XXX.XXX.XXX]</p>
-</div>
-<div class="copyright">
-&copy; 2026 paramoby.ch – Alle Rechte vorbehalten.
-</div>
-</div>
+    <a href="javascript:void(0)" class="impressum-link" onclick="toggleImpressum()">Rechtliche Informationen anzeigen</a>
+    
+    <div id="impressum-content">
+        </div>
+
+    <p style="margin-top: 20px;">&copy; 2026 paramoby.ch</p>
 </footer>
+
+<script>
+    function toggleImpressum() {
+        var x = document.getElementById("impressum-content");
+        
+        // Base64 kodierte Daten (Schutz vor Bots)
+        // Ersetze diese Werte durch deine echten Daten
+        // Tipp: Nutze einen "Base64 Encoder" online für deinen Namen/Adresse
+        var firma = "paramoby.ch";
+        var name = "1f"; // Entspricht "[hier steht dein Name]"
+        var adresse = "Yfzwlvr"; // Entspricht "[hier steht deine Adresse]"
+
+        if (x.style.display === "none" || x.style.display === "") {
+            x.innerHTML = "<strong>Impressum</strong><br>" + 
+                          firma + "<br>" + 
+                          atob(name) + "<br>" + 
+                          atob(adresse) + "<br>" + 
+                          "E-Mail: info@paramoby.ch";
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
 </body>
 </html>
-</div>
