@@ -38,7 +38,9 @@
         text-align: center;
     }
 
-    header { margin-bottom: 40px; }
+    header {
+        margin-bottom: 40px;
+    }
 
     .logo {
         max-width: 150px;
@@ -62,7 +64,17 @@
         font-weight: 300;
     }
 
-    main { margin-bottom: 60px; width: 100%; }
+    main {
+        margin-bottom: 60px;
+        width: 100%;
+    }
+
+    .points {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
 
     .point {
         background-color: #f9f9f9;
@@ -72,13 +84,17 @@
         width: 100%;
         max-width: 500px;
         text-align: left;
-        margin: 15px auto;
         transition: transform 0.2s ease;
     }
 
-    .point:hover { transform: translateX(5px); }
+    .point:hover {
+        transform: translateX(5px);
+    }
 
-    .point-title { font-weight: 700; color: var(--text-color); }
+    .point-title {
+        font-weight: 700;
+        color: var(--text-color);
+    }
 
     footer {
         background-color: #000000;
@@ -88,15 +104,22 @@
         margin-top: auto;
     }
 
-    footer a {
+    .contact-info a {
         color: #ffffff;
         text-decoration: none;
         border-bottom: 1px solid rgba(255,255,255,0.3);
     }
 
+    .copyright {
+        font-size: 0.8rem;
+        margin-top: 15px;
+        color: rgba(255,255,255,0.6);
+    }
+
     @media (max-width: 600px) {
         h1 { font-size: 2rem; }
         .container { padding: 15px; }
+        .point { max-width: 100%; }
     }
 </style>
 </head>
@@ -105,19 +128,20 @@
 <div class="container">
     <header>
         <img src="logo.png" alt="paramoby.ch Logo" class="logo">
-        <br>
         <h1>paramoby.ch</h1>
         <p class="motto">Mobilität ohne Grenzen</p>
     </header>
 
     <main>
-        <div class="point">
-            <div class="point-title">Import & Vertrieb</div>
-            <div>Spezialisierte Rollstuhlsysteme für die Schweiz.</div>
-        </div>
-        <div class="point">
-            <div class="point-title">Qualität & Service</div>
-            <div>Zuverlässige Lösungen für individuelle Mobilität.</div>
+        <div class="points">
+            <div class="point">
+                <div class="point-title">Import & Vertrieb</div>
+                <div class="point-text">Spezialisierte Rollstuhlsysteme für die Schweiz.</div>
+            </div>
+            <div class="point">
+                <div class="point-title">Qualität & Service</div>
+                <div class="point-text">Zuverlässige Lösungen für individuelle Mobilität.</div>
+            </div>
         </div>
     </main>
 </div>
