@@ -3,51 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>paramoby.ch – Paramobilität</title>
+    <title>paramoby.ch – Paramobilität für die Schweiz</title>
     <meta name="robots" content="noindex, nofollow">
     <style>
-        :root { --bg: #ffffff; --accent: #ffd700; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; text-align: center; }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px; flex-grow: 1; }
-        h1 { border-bottom: 3px solid var(--accent); display: inline-block; }
-        .point { background: #f9f9f9; padding: 20px; margin: 15px 0; border-left: 5px solid #000; text-align: left; border-radius: 4px; }
-        footer { padding: 40px; font-size: 0.85rem; border-top: 1px solid #eee; }
-        .btn { color: #888; text-decoration: underline; cursor: pointer; background: none; border: none; font-size: 0.85rem; padding: 10px; }
-        #box { display: none; margin-top: 20px; padding: 15px; border: 1px solid #ddd; background: #fafafa; text-align: center; }
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #ffd700;
+            --sub-color: #666666;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        header { margin-bottom: 40px; }
+        .logo { max-width: 150px; height: auto; margin-bottom: 10px; }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .motto {
+            font-size: 1.2rem;
+            color: var(--sub-color);
+            margin-top: 5px;
+            font-weight: 300;
+        }
+
+        main { margin-bottom: 60px; width: 100%; }
+
+        .points {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .point {
+            background-color: #f9f9f9;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border-left: 5px solid var(--text-color);
+            width: 100%;
+            max-width: 500px;
+            text-align: left;
+            transition: transform 0.2s ease;
+        }
+
+        .point:hover { transform: translateX(5px); }
+        .point-title { font-weight: 700; color: var(--text-color); }
+
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .imp-link {
+            color: #aaa;
+            text-decoration: underline;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        #details {
+            display: none;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #444;
+            background: #111;
+            color: #ccc;
+            max-width: 400px;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) { h1 { font-size: 2rem; } }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>paramoby.ch</h1>
-    <p>Paramobilität ohne Grenzen</p>
-    <div class="point"><strong>B2B Paramobilität:</strong> Vertrieb von Hilfsmitteln an den Fachhandel.</div>
-    <div class="point"><strong>Schweizer Qualität:</strong> Import und Service für Rollstuhlsysteme.</div>
+    <header>
+        <img src="logo.png" alt="paramoby.ch Logo" class="logo">
+        <h1>paramoby.ch</h1>
+        <p class="motto">Paramobilität ohne Grenzen</p>
+    </header>
+
+    <main>
+        <div class="points">
+            <div class="point">
+                <div class="point-title">B2B Paramobilität</div>
+                <div class="point-text">Spezialisierter Vertrieb von Hilfsmitteln für Menschen mit Behinderungen an den Fachhandel.</div>
+            </div>
+            <div class="point">
+                <div class="point-title">Schweizer Qualität</div>
+                <div class="point-text">Zuverlässiger Import und Service für anspruchsvolle Mobilitätssysteme.</div>
+            </div>
+        </div>
+    </main>
 </div>
 
 <footer>
-    <button class="btn" onclick="show()">Rechtliche Hinweise anzeigen</button>
+    <button class="imp-link" onclick="toggleImp()">Impressum anzeigen</button>
     
-    <div id="box"></div>
-    
-    <p style="margin-top: 25px; color: #bbb;">&copy; 2026 paramoby.ch</p>
+    <div id="details"></div>
+
+    <div style="margin-top: 20px; font-size: 0.8rem; color: #666;">
+        &copy; 2026 paramoby.ch
+    </div>
 </footer>
 
 <script>
-    function show() {
-        var element = document.getElementById("box");
+    function toggleImp() {
+        var box = document.getElementById("details");
         
-        // Google-Schutz: Daten sind kodiert
-        // n = Name, a = Adresse
+        // Google-Schutz: Base64 kodierte Daten
         var n = "W2hpZXIgc3RlaHQgZGVpbiBOYW1lXQ=="; 
         var a = "W2hpZXIgc3RlaHQgZGVpbmUgQWRyZXNzZV0=";
 
-        if (element.style.display === "none" || element.style.display === "") {
-            // Schreibt den Text erst beim Klick rein
-            element.innerHTML = "<strong>Impressum</strong><br>paramoby.ch<br>" + atob(n) + "<br>" + atob(a) + "<br>Schweiz<br>E-Mail: info@paramoby.ch";
-            element.style.display = "block";
+        if (box.style.display === "none" || box.style.display === "") {
+            box.innerHTML = "<strong>Impressum</strong><br>paramoby.ch<br>" + 
+                            atob(n) + "<br>" + 
+                            atob(a) + "<br>Schweiz<br>" +
+                            "E-Mail: info@paramoby.ch";
+            box.style.display = "block";
         } else {
-            element.style.display = "none";
+            box.style.display = "none";
         }
     }
 </script>
