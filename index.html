@@ -99,60 +99,98 @@
     footer {
         background-color: #000000;
         color: #ffffff;
-        padding: 30px 20px;
+        padding: 40px 20px;
         text-align: center;
         margin-top: auto;
     }
 
-    .contact-info a {
-        color: #ffffff;
+    .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        text-align: left;
+    }
+
+    .footer-section h4 {
+        border-bottom: 1px solid #444;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+    }
+
+    .footer-section p, .footer-section a {
+        font-size: 0.85rem;
+        color: #ccc;
         text-decoration: none;
-        border-bottom: 1px solid rgba(255,255,255,0.3);
+        margin: 5px 0;
+        display: block;
     }
 
     .copyright {
-        font-size: 0.8rem;
-        margin-top: 15px;
-        color: rgba(255,255,255,0.6);
+        font-size: 0.75rem;
+        margin-top: 30px;
+        color: rgba(255,255,255,0.4);
+        grid-column: span 2;
+        text-align: center;
     }
 
     @media (max-width: 600px) {
         h1 { font-size: 2rem; }
         .container { padding: 15px; }
         .point { max-width: 100%; }
+        .footer-content { grid-template-columns: 1fr; }
     }
 </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <img src="logo.png" alt="paramoby.ch Logo" class="logo">
-        <h1>paramoby.ch</h1>
-        <p class="motto">Mobilität ohne Grenzen</p>
-    </header>
+<header>
+<img src="logo.png" alt="paramoby.ch Logo" class="logo">
+<h1>paramoby.ch</h1>
+<p class="motto">Mobilität ohne Grenzen</p>
+</header>
 
-    <main>
-        <div class="points">
-            <div class="point">
-                <div class="point-title">Import & Vertrieb</div>
-                <div class="point-text">Spezialisierte Rollstuhlsysteme für die Schweiz.</div>
-            </div>
-            <div class="point">
-                <div class="point-title">Qualität & Service</div>
-                <div class="point-text">Zuverlässige Lösungen für individuelle Mobilität.</div>
-            </div>
+<main>
+    <div class="points">
+        <div class="point">
+            <div class="point-title">B2B Vertrieb</div>
+            <div class="point-text">Spezialisierter Business-to-Business Verkauf von Mobilitätslösungen für Unternehmen und Fachhandel.</div>
         </div>
-    </main>
+        <div class="point">
+            <div class="point-title">Import & Vertrieb</div>
+            <div class="point-text">Spezialisierte Rollstuhlsysteme für den Schweizer Markt.</div>
+        </div>
+        <div class="point">
+            <div class="point-title">Qualität & Service</div>
+            <div class="point-text">Zuverlässige Unterstützung für individuelle Mobilitätsprojekte.</div>
+        </div>
+    </div>
+</main>
 </div>
 
 <footer>
-    <div class="contact-info">
-        Kontakt: <a href="mailto:info@paramoby.ch">info@paramoby.ch</a>
-    </div>
-    <div class="copyright">
-        &copy; 2026 paramoby.ch
-    </div>
+<div class="footer-content">
+<div class="footer-section">
+<h4>Kontakt</h4>
+<p>paramoby.ch</p>
+<a href="mailto:info@paramoby.ch">info@paramoby.ch</a>
+<p>Schweiz</p>
+</div>
+<div class="footer-section">
+<h4>Impressum</h4>
+<p><strong>Firmenname:</strong> paramoby.ch</p>
+<p><strong>Vertretung:</strong> [Vorname Nachname]</p>
+<p><strong>Adresse:</strong> [Strasse Nr., PLZ Ort]</p>
+<p><strong>UID:</strong> [CHE-XXX.XXX.XXX]</p>
+</div>
+<div class="copyright">
+&copy; 2026 paramoby.ch – Alle Rechte vorbehalten.
+</div>
+</div>
 </footer>
 </body>
 </html>
