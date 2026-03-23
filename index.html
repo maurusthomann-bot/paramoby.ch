@@ -3,29 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>paramoby.ch – Paramobilität für die Schweiz</title>
+    <title>paramoby.ch – Paramobilität</title>
     <meta name="robots" content="noindex, nofollow">
     <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #000000;
-            --accent-color: #ffd700;
-            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-        body { 
-            font-family: var(--font-main); 
-            margin: 0; 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh; 
-            text-align: center; 
-        }
+        :root { --bg: #ffffff; --accent: #ffd700; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; display: flex; flex-direction: column; min-height: 100vh; text-align: center; }
         .container { max-width: 800px; margin: 0 auto; padding: 40px; flex-grow: 1; }
-        h1 { border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 5px; }
+        h1 { border-bottom: 3px solid var(--accent); display: inline-block; }
         .point { background: #f9f9f9; padding: 20px; margin: 15px 0; border-left: 5px solid #000; text-align: left; border-radius: 4px; }
         footer { padding: 40px; font-size: 0.85rem; border-top: 1px solid #eee; }
-        .imp-link { color: #888; text-decoration: underline; cursor: pointer; background: none; border: none; font-family: inherit; }
-        #details { display: none; margin-top: 20px; padding: 15px; border: 1px solid #ddd; background: #fafafa; }
+        .btn { color: #888; text-decoration: underline; cursor: pointer; background: none; border: none; font-size: 0.85rem; padding: 10px; }
+        #box { display: none; margin-top: 20px; padding: 15px; border: 1px solid #ddd; background: #fafafa; text-align: center; }
     </style>
 </head>
 <body>
@@ -33,282 +21,33 @@
 <div class="container">
     <h1>paramoby.ch</h1>
     <p>Paramobilität ohne Grenzen</p>
-    
-    <div class="point">
-        <strong>B2B Paramobilität</strong><br>
-        Spezialisierter Vertrieb von Hilfsmitteln für Menschen mit Behinderungen an den Fachhandel.
-    </div>
-    
-    <div class="point">
-        <strong>Schweizer Qualität</strong><br>
-        Zuverlässiger Import und Service für anspruchsvolle Mobilitätssysteme.
-    </div>
+    <div class="point"><strong>B2B Paramobilität:</strong> Vertrieb von Hilfsmitteln an den Fachhandel.</div>
+    <div class="point"><strong>Schweizer Qualität:</strong> Import und Service für Rollstuhlsysteme.</div>
 </div>
 
 <footer>
-    <button class="imp-link" onclick="toggle()">Impressum anzeigen</button>
+    <button class="btn" onclick="show()">Rechtliche Hinweise anzeigen</button>
     
-    <div id="details">
-        </div>
+    <div id="box"></div>
     
     <p style="margin-top: 25px; color: #bbb;">&copy; 2026 paramoby.ch</p>
 </footer>
 
 <script>
-    function toggle() {
-        var x = document.getElementById("details");
+    function show() {
+        var element = document.getElementById("box");
         
-        // Diese Werte sind kodiert (Google-Schutz)
-        // Du kannst sie so lassen oder mit deinem Base64-Salat ersetzen
-        var n = "W2hpZXIgc3RlaHQgZGVpbiBOYW1lXQ=="; // Dein Name
-        var a = "<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>paramoby.ch – Paramobilität für die Schweiz</title>
-    <meta name="robots" content="noindex, nofollow">
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #000000;
-            --accent-color: #ffd700;
-            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-        body { 
-            font-family: var(--font-main); 
-            margin: 0; 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh; 
-            text-align: center; 
-        }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px; flex-grow: 1; }
-        h1 { border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 5px; }
-        .point { background: #f9f9f9; padding: 20px; margin: 15px 0; border-left: 5px solid #000; text-align: left; border-radius: 4px; }
-        footer { padding: 40px; font-size: 0.85rem; border-top: 1px solid #eee; }
-        .imp-link { color: #888; text-decoration: underline; cursor: pointer; background: none; border: none; font-family: inherit; }
-        #details { display: none; margin-top: 20px; padding: 15px; border: 1px solid #ddd; background: #fafafa; }
-    </style>
-</head>
-<body>
+        // Google-Schutz: Daten sind kodiert
+        // n = Name, a = Adresse
+        var n = "W2hpZXIgc3RlaHQgZGVpbiBOYW1lXQ=="; 
+        var a = "W2hpZXIgc3RlaHQgZGVpbmUgQWRyZXNzZV0=";
 
-<div class="container">
-    <h1>paramoby.ch</h1>
-    <p>Paramobilität ohne Grenzen</p>
-    
-    <div class="point">
-        <strong>B2B Paramobilität</strong><br>
-        Spezialisierter Vertrieb von Hilfsmitteln für Menschen mit Behinderungen an den Fachhandel.
-    </div>
-    
-    <div class="point">
-        <strong>Schweizer Qualität</strong><br>
-        Zuverlässiger Import und Service für anspruchsvolle Mobilitätssysteme.
-    </div>
-</div>
-
-<footer>
-    <button class="imp-link" onclick="toggle()">Impressum anzeigen</button>
-    
-    <div id="details">
-        </div>
-    
-    <p style="margin-top: 25px; color: #bbb;">&copy; 2026 paramoby.ch</p>
-</footer>
-
-<script>
-    function toggle() {
-        var x = document.getElementById("details");
-        
-        // Diese Werte sind kodiert (Google-Schutz)
-        // Du kannst sie so lassen oder mit deinem Base64-Salat ersetzen
-        var n = "W2hpZXIgc3RlaHQgZGVpbiBOYW1lXQ=="; // Dein Name
-        var a = "<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>paramoby.ch – Paramobilität für die Schweiz</title>
-    <meta name="robots" content="noindex, nofollow">
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #000000;
-            --accent-color: #ffd700;
-            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-        body { 
-            font-family: var(--font-main); 
-            margin: 0; 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh; 
-            text-align: center; 
-        }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px; flex-grow: 1; }
-        h1 { border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 5px; }
-        .point { background: #f9f9f9; padding: 20px; margin: 15px 0; border-left: 5px solid #000; text-align: left; border-radius: 4px; }
-        footer { padding: 40px; font-size: 0.85rem; border-top: 1px solid #eee; }
-        .imp-link { color: #888; text-decoration: underline; cursor: pointer; background: none; border: none; font-family: inherit; }
-        #details { display: none; margin-top: 20px; padding: 15px; border: 1px solid #ddd; background: #fafafa; }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h1>paramoby.ch</h1>
-    <p>Paramobilität ohne Grenzen</p>
-    
-    <div class="point">
-        <strong>B2B Paramobilität</strong><br>
-        Spezialisierter Vertrieb von Hilfsmitteln für Menschen mit Behinderungen an den Fachhandel.
-    </div>
-    
-    <div class="point">
-        <strong>Schweizer Qualität</strong><br>
-        Zuverlässiger Import und Service für anspruchsvolle Mobilitätssysteme.
-    </div>
-</div>
-
-<footer>
-    <button class="imp-link" onclick="toggle()">Impressum anzeigen</button>
-    
-    <div id="details">
-        </div>
-    
-    <p style="margin-top: 25px; color: #bbb;">&copy; 2026 paramoby.ch</p>
-</footer>
-
-<script>
-    function toggle() {
-        var x = document.getElementById("details");
-        
-        // Diese Werte sind kodiert (Google-Schutz)
-        // Du kannst sie so lassen oder mit deinem Base64-Salat ersetzen
-        var n = "W2hpZXIgc3RlaHQgZGVpbiBOYW1lXQ=="; // Dein Name
-        var a = "W2hpZXIgc3RlaHQgZGVpbmUgQWRyZXNzZV0=<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>paramoby.ch – Paramobilität für die Schweiz</title>
-    <meta name="robots" content="noindex, nofollow">
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #000000;
-            --accent-color: #ffd700;
-            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-        body { 
-            font-family: var(--font-main); 
-            margin: 0; 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh; 
-            text-align: center; 
-        }
-        .container { max-width: 800px; margin: 0 auto; padding: 40px; flex-grow: 1; }
-        h1 { border-bottom: 3px solid var(--accent-color); display: inline-block; padding-bottom: 5px; }
-        .point { background: #f9f9f9; padding: 20px; margin: 15px 0; border-left: 5px solid #000; text-align: left; border-radius: 4px; }
-        footer { padding: 40px; font-size: 0.85rem; border-top: 1px solid #eee; }
-        .imp-link { color: #888; text-decoration: underline; cursor: pointer; background: none; border: none; font-family: inherit; }
-        #details { display: none; margin-top: 20px; padding: 15px; border: 1px solid #ddd; background: #fafafa; }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h1>paramoby.ch</h1>
-    <p>Paramobilität ohne Grenzen</p>
-    
-    <div class="point">
-        <strong>B2B Paramobilität</strong><br>
-        Spezialisierter Vertrieb von Hilfsmitteln für Menschen mit Behinderungen an den Fachhandel.
-    </div>
-    
-    <div class="point">
-        <strong>Schweizer Qualität</strong><br>
-        Zuverlässiger Import und Service für anspruchsvolle Mobilitätssysteme.
-    </div>
-</div>
-
-<footer>
-    <button class="imp-link" onclick="toggle()">Impressum anzeigen</button>
-    
-    <div id="details">
-        </div>
-    
-    <p style="margin-top: 25px; color: #bbb;">&copy; 2026 paramoby.ch</p>
-</footer>
-
-<script>
-    function toggle() {
-        var x = document.getElementById("details");
-        
-        // Diese Werte sind kodiert (Google-Schutz)
-        // Du kannst sie so lassen oder mit deinem Base64-Salat ersetzen
-        var n = "W2hpZXIgc3RlaHQgZGVpbiBOYW1lXQ=="; // Dein Name
-        var a = "W2hpZXIgc3RlaHQgZGVpbmUgQWRyZXNzZV0="; // Deine Adresse
-
-        if (x.style.display === "none" || x.style.display === "") {
-            x.innerHTML = "<strong>Impressum</strong><br>" + 
-                          "paramoby.ch<br>" + 
-                          atob(n) + "<br>" + 
-                          atob(a) + "<br>" + 
-                          "Schweiz<br>E-Mail: info@paramoby.ch";
-            x.style.display = "block";
+        if (element.style.display === "none" || element.style.display === "") {
+            // Schreibt den Text erst beim Klick rein
+            element.innerHTML = "<strong>Impressum</strong><br>paramoby.ch<br>" + atob(n) + "<br>" + atob(a) + "<br>Schweiz<br>E-Mail: info@paramoby.ch";
+            element.style.display = "block";
         } else {
-            x.style.display = "none";
-        }
-    }
-</script>
-
-</body>
-</html>"; // Deine Adresse
-
-        if (x.style.display === "none" || x.style.display === "") {
-            x.innerHTML = "<strong>Impressum</strong><br>" + 
-                          "paramoby.ch<br>" + 
-                          atob(n) + "<br>" + 
-                          atob(a) + "<br>" + 
-                          "Schweiz<br>E-Mail: info@paramoby.ch";
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-</script>
-
-</body>
-</html>"; // Deine Adresse
-
-        if (x.style.display === "none" || x.style.display === "") {
-            x.innerHTML = "<strong>Impressum</strong><br>" + 
-                          "paramoby.ch<br>" + 
-                          atob(n) + "<br>" + 
-                          atob(a) + "<br>" + 
-                          "Schweiz<br>E-Mail: info@paramoby.ch";
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-</script>
-
-</body>
-</html>"; // Deine Adresse
-
-        if (x.style.display === "none" || x.style.display === "") {
-            x.innerHTML = "<strong>Impressum</strong><br>" + 
-                          "paramoby.ch<br>" + 
-                          atob(n) + "<br>" + 
-                          atob(a) + "<br>" + 
-                          "Schweiz<br>E-Mail: info@paramoby.ch";
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
+            element.style.display = "none";
         }
     }
 </script>
