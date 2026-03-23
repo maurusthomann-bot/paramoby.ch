@@ -106,8 +106,7 @@
 <footer>
     <a href="javascript:void(0)" class="impressum-link" onclick="toggleImpressum()">Rechtliche Informationen anzeigen</a>
     
-    <div id="impressum-content">
-        </div>
+    <div id="impressum-content"></div>
 
     <p style="margin-top: 20px;">&copy; 2026 paramoby.ch</p>
 </footer>
@@ -116,18 +115,16 @@
     function toggleImpressum() {
         var x = document.getElementById("impressum-content");
         
-        // Base64 kodierte Daten (Schutz vor Bots)
-        // Ersetze diese Werte durch deine echten Daten
-        // Tipp: Nutze einen "Base64 Encoder" online für deinen Namen/Adresse
+        // Diese Werte sind verschlüsselt, damit Google sie nicht findet
         var firma = "paramoby.ch";
-        var name = "1f"; // Entspricht "[hier steht dein Name]"
-        var adresse = "Yfzwlvr"; // Entspricht "[hier steht deine Adresse]"
+        var n = "Yfzwlvr"; // "Name noch einsetzen"
+        var a = "1f"; // "Adresse noch einsetzen"
 
         if (x.style.display === "none" || x.style.display === "") {
             x.innerHTML = "<strong>Impressum</strong><br>" + 
                           firma + "<br>" + 
-                          atob(name) + "<br>" + 
-                          atob(adresse) + "<br>" + 
+                          atob(n) + "<br>" + 
+                          atob(a) + "<br>" + 
                           "E-Mail: info@paramoby.ch";
             x.style.display = "block";
         } else {
